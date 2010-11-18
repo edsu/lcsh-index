@@ -3,10 +3,11 @@ lookups. It doesn't bother loading the RDF into a triple store, but
 just rips through the ntriples with a regex and fires off the url and
 label to solr. It probably has bugs, since I wrote it during a conference call.
 
-1. wget http://www.apache.org/dist/lucene/solr/1.4.1/apache-solr-1.4.1.tgz
-2. tar xvfz apache-solr-1.4.1.tgz
-3. cp schema.xml apache-solr-1.4.1/solr/example/solr/conf/
-4. cd apache-solr-1.4.1/example
-5. java -jar start.jar
+0. wget http://www.apache.org/dist/lucene/solr/1.4.1/apache-solr-1.4.1.tgz
+1. tar xvfz apache-solr-1.4.1.tgz
+2. cp schema.xml apache-solr-1.4.1/example/solr/conf/
+3. cd apache-solr-1.4.1/example
+4. java -jar start.jar
+5. easy_install solrpy
 6. ./index.py
 7. profit!
