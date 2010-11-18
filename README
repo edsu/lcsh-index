@@ -1,7 +1,7 @@
-This is a little hack loads LCSH RDF ntriples data into Solr to aid in 
-local lookups. It doesn't bother loading the RDF into a triple store, but
+This little hack loads LCSH RDF ntriples data into Solr to aid in local 
+lookups. It doesn't bother loading the RDF into a triple store, but
 just rips through the ntriples with a regex and fires off the url and
-label to solr.
+label to solr. It probably has bugs, since I wrote it during a conference call.
 
 1. wget http://www.apache.org/dist/lucene/solr/1.4.1/apache-solr-1.4.1.tgz
 2. tar xvfz apache-solr-1.4.1.tgz
