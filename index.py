@@ -27,3 +27,5 @@ for l in files.open(nt_file):
         uri, label = match.groups()
         solr.add(id=uri, label=label)
         print uri, label
+
+solr.commit()
