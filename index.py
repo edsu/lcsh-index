@@ -21,11 +21,15 @@ nt_file = files.namelist()[0]
 pref_label_pattern = r'^<(.+?)> <http://www.w3.org/2004/02/skos/core#prefLabel> "(.+)"@en.$'
 
 # send the data off to solr
-for l in files.open(nt_file):
-    match = re.match(pref_label_pattern, l)
+count = 0
+for line in files.open(nt_file):
+    match = re.match(pref_label_pattern, line)
     if match: 
+        count += 1
         uri, label = match.groups()
         solr.add(id=uri, label=label)
         print uri, label
+    if count % 1000 == 0:
+        solr.commit()
 
 solr.commit()
